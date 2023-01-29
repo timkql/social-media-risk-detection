@@ -871,52 +871,53 @@ export const userProfileData = [
 ];
 
 export const ordersGrid = [
+  // {
+  //   headerText: 'Image',
+  //   template: gridOrderImage,
+  //   textAlign: 'Center',
+  //   width: '120',
+  // },
   {
-    headerText: 'Image',
-    template: gridOrderImage,
+    field: 'text',
+    headerText: 'Tweet',
+    width: '1000',
+    // editType: 'dropdownedit',
+    textAlign: 'Left',
+  },
+  { field: 'URL',
+    headerText: 'Link',
+    width: '400',
     textAlign: 'Center',
-    width: '120',
+    editType: 'URL'
   },
   {
-    field: 'OrderItems',
-    headerText: 'Item',
-    width: '150',
-    editType: 'dropdownedit',
-    textAlign: 'Center',
+    // field: 'date',
+    // headerText: 'Date',
+    // // format: 'C2',
+    // textAlign: 'Center',
+    // // editType: 'numericedit',
+    // width: '120',
   },
-  { field: 'CustomerName',
-    headerText: 'Customer Name',
-    width: '150',
-    textAlign: 'Center',
-  },
+  // {
+  //   headerText: 'Status',
+  //   template: gridOrderStatus,
+  //   field: 'OrderItems',
+  //   textAlign: 'Center',
+  //   width: '120',
+  // },
   {
-    field: 'TotalAmount',
-    headerText: 'Total Amount',
-    format: 'C2',
-    textAlign: 'Center',
-    editType: 'numericedit',
-    width: '150',
-  },
-  {
-    headerText: 'Status',
-    template: gridOrderStatus,
-    field: 'OrderItems',
-    textAlign: 'Center',
-    width: '120',
-  },
-  {
-    field: 'OrderID',
-    headerText: 'Order ID',
-    width: '120',
+    field: 'label',
+    headerText: 'Risk',
+    width: '100',
     textAlign: 'Center',
   },
 
-  {
-    field: 'Location',
-    headerText: 'Location',
-    width: '150',
-    textAlign: 'Center',
-  },
+  // {
+  //   field: 'Location',
+  //   headerText: 'Location',
+  //   width: '150',
+  //   textAlign: 'Center',
+  // },
 ];
 
 export const customersData = [

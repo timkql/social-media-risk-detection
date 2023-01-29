@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
 import { getTweetData } from '../utils';
 
@@ -6,7 +6,17 @@ import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy';
 import { Header } from '../components';
 
 const TweetsLog = () => {
-  const tweetData = getTweetData("trump");
+  const [tweetData, setTweetData] = useState([]);
+  
+  useEffect(() => {
+    getTweetData("trump")
+    .then((response) => setTweetData(response))
+    .catch((error) => {
+      console.log('fetch data failed', error);
+    })
+  }, [])
+
+  // const tweetData = getTweetData("trump");
   console.log(tweetData);
   const editing = { allowDeleting: true, allowEditing: true };
   return (
@@ -14,7 +24,7 @@ const TweetsLog = () => {
       <Header category="Risks" title="Twitter" />
       <GridComponent
         id="gridcomp"
-        dataSource={ordersData}
+        dataSource={tweetData}
         allowPaging
         allowSorting
         allowExcelExport
